@@ -36,7 +36,8 @@ namespace Mqtt.Client.AspNetCore.Services
         public async Task HandleConnectedAsync(MqttClientConnectedEventArgs eventArgs)
         {
             _logger.LogInformation("connected");
-            await mqttClient.SubscribeAsync("hello/world");
+            // alteraçao do topico  aqui  
+            await mqttClient.SubscribeAsync("temperature");
         }
 
         public async Task HandleDisconnectedAsync(MqttClientDisconnectedEventArgs eventArgs)
